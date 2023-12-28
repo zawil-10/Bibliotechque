@@ -1,17 +1,17 @@
 import unittest
-from orite_objet import *
+from main import Utilisateur, Exemplaire, Ressource, Livre, Revue, Emplacement
 
 
 class TestUtilisateur(unittest.TestCase):
     def test_emprunter_exemplaire(self):
-        utilisateur = Utilisateur("Doe", "John", "john@example.com")
+        utilisateur = Utilisateur("zeze", "will", "will@gmail.com")
         exemplaire = Exemplaire(identifiant=1)
         utilisateur.emprunter(exemplaire)
         self.assertIn(exemplaire, utilisateur.emprunts)
         self.assertFalse(exemplaire.disponible)
 
     def test_retourner_exemplaire(self):
-        utilisateur = Utilisateur("Doe", "John", "john@example.com")
+        utilisateur = Utilisateur("zeze", "will", "will@mail.com")
         exemplaire = Exemplaire(identifiant=1)
         utilisateur.emprunter(exemplaire)
         utilisateur.retourner(exemplaire)
